@@ -1,0 +1,9 @@
+---
+- name: be sure apt cache is updated
+  apt: update_cache=yes cache_valid_time=3600
+- include: zsh.yml
+- include: sysstat.yml
+- include: vim.yml
+- include: git.yml
+- include: tig.yml
+- include: tmux.yml

@@ -1,0 +1,10 @@
+---
+- name: be sure sysstat is installed
+  apt: pkg=sysstat state=present
+  tags: sysstat
+
+- name: be sure sysstat is configured
+  action: template src=default/sysstat.j2 dest=/etc/default/sysstat
+  notify:
+  - restart sysstat
+  tags: sysstat

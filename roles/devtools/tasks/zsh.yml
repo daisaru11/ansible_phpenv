@@ -1,0 +1,4 @@
+---
+- name: be sure zsh is installed
+  apt: pkg=zsh state=present
+

@@ -1,0 +1,3 @@
+---
+- name: be sure tig is installed
+  apt: pkg=tig state=present

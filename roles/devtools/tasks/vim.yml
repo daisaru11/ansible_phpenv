@@ -1,0 +1,3 @@
+---
+- name: be sure vim is installed
+  apt: pkg=vim state=present

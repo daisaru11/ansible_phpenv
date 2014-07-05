@@ -1,0 +1,6 @@
+---
+- name: be sure apt cache is updated
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: be sure unzip is installed
+  apt: pkg=unzip state=present

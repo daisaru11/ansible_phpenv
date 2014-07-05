@@ -1,0 +1,4 @@
+---
+- name: be sure tmux is installed
+  apt: pkg=tmux state=present
+

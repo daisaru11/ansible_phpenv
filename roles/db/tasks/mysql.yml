@@ -1,0 +1,23 @@
+---
+- name: be sure mysql-server is installed
+  apt: pkg=mysql-server state=present
+  tags: mysqld
+
+- name: be sure mysql-client is installed
+  apt: pkg=mysql-server state=present
+  tags: mysqld
+
+- name: be sure mysqld is configured
+  action: template src=mysql/my.cnf.j2 dest=/etc/mysql/my.cnf
+  notify:
+  - restart mysqld
+  tags: mysqld
+
+- name: be sure mysqld is running and enabled
+  service: name=mysql state=started enabled=yes
+  tags: mysqld
+
+- name: be sure python-mysqldb is installed
+  apt: pkg=python-mysqldb state=present
+  tags: appdb
+
