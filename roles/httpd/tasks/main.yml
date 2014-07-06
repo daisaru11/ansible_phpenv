@@ -1,0 +1,4 @@
+---
+- name: be sure apt cache is updated
+  apt: update_cache=yes cache_valid_time=3600
+- include: apache2.yml

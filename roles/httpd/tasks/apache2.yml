@@ -1,0 +1,8 @@
+---
+- name: be sure apache2 is installed
+  apt: pkg=apache2 state=present
+  tags: httpd
+
+- name: be sure apache2 is running and enabled
+  service: name=apache2 state=started enabled=yes
+  tags: httpd

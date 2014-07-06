@@ -2,3 +2,5 @@
 - include: common.yml
 - include: devtools.yml
 - include: db.yml
+- include: httpd.yml
+- include: php.yml

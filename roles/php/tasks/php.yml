@@ -1,0 +1,28 @@
+---
+- name: be sure php5-common is installed
+  apt: pkg=php5-common state=present
+  notify:
+  - restart apache2
+  tags: php
+  
+- name: be sure php5-cli is installed
+  apt: pkg=php5-cli state=present
+  tags: php
+
+- name: be sure libapache2-mod-php5 is installed
+  apt: pkg=libapache2-mod-php5 state=present
+  notify:
+  - restart apache2
+  tags: php
+
+- name: be sure php5-mysql is installed
+  apt: pkg=php5-mysql state=present
+  notify:
+  - restart apache2
+  tags: php
+
+- name: be sure php5-curl is installed
+  apt: pkg=php5-curl state=present
+  notify:
+  - restart apache2
+  tags: php
