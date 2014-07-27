@@ -27,6 +27,12 @@
   - restart apache2
   tags: php
 
+- name: be sure php5-mcrypt is installed
+  apt: pkg=php5-mcrypt state=present
+  notify:
+  - restart apache2
+  tags: php
+
 - name: be sure composer is installed
   shell:
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin && mv -f /usr/local/bin/composer.phar /usr/local/bin/composer
